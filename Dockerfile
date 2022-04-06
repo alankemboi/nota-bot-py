@@ -64,12 +64,12 @@ RUN apt update && apt upgrade -y && \
 # Pypi package Repo upgrade
 RUN pip3 install --upgrade pip setuptools
 
-# Copy Python Requirements to /root/Tianabot
-RUN git clone -b shiken https://github.com/teamofdevil-x/tiana /root/Tianabot
-WORKDIR /root/Tianabot
+# Copy Python Requirements to /root/Notabot
+RUN git clone -b shiken https://github.com/teamofdevil-x/tiana /root/Notabot
+WORKDIR /root/Notabot
 
-#Copy config file to /root/Tianabot
-COPY ./Tianabot/sample_config.py ./Tianabot/config.py* /root/Tianabot/Tianabot/
+#Copy config file to /root/Notabot
+COPY ./Notabot/sample_config.py ./Notabot/config.py* /root/Notabot/Notabot/
 
 ENV PATH="/home/bot/bin:$PATH"
 
